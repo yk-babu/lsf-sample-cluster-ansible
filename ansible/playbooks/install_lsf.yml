@@ -1,0 +1,5 @@
+- name: Install LSF on all nodes
+  hosts: all
+  become: yes
+  roles:
+    - lsf-install
