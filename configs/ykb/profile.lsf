@@ -1,0 +1,7 @@
+# LSF profile for cluster ykb
+export LSF_TOP=/prj/ykb
+export LSF_ENVDIR=$LSF_TOP/conf/ykb
+export LSF_BINDIR=$LSF_TOP/10.1/bin
+export LSF_LIBDIR=$LSF_TOP/10.1/lib
+export PATH=$LSF_BINDIR:$PATH
+export LD_LIBRARY_PATH=$LSF_LIBDIR:$LD_LIBRARY_PATH
