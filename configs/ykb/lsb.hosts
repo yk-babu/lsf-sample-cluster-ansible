@@ -1,0 +1,28 @@
+Begin Host
+HOST_NAME       MXJ   NCPUS  RESOURCES        server
+# Master nodes — exclude from job execution (MXJ=0)
+ykb-master-01    0     8     (mgmt)           1
+ykb-master-02    0     8     (mgmt)           1
+
+# Compute nodes
+ykb-slave-01    -1     16    ()               1
+ykb-slave-02    -1     16    ()               1
+ykb-slave-03    -1     16    ()               1
+ykb-slave-04    -1     16    ()               1
+ykb-slave-05    -1     16    ()               1
+ykb-slave-06    -1     16    ()               1
+ykb-slave-07    -1     16    ()               1
+ykb-slave-08    -1     16    ()               1
+ykb-slave-09    -1     16    ()               1
+ykb-slave-10    -1     16    ()               1
+ykb-slave-11    -1     16    ()               1
+ykb-slave-12    -1     16    ()               1
+ykb-slave-13    -1     16    ()               1
+ykb-slave-14    -1     16    ()               1
+ykb-slave-15    -1     16    ()               1
+ykb-slave-16    -1     16    ()               1
+ykb-slave-17    -1     16    ()               1
+ykb-slave-18    -1     16    ()               1
+ykb-slave-19    -1     16    ()               1
+ykb-slave-20    -1     16    ()               1
+End Host
