@@ -1,0 +1,5 @@
+- name: Deploy LSF configuration to masters
+  hosts: masters
+  become: yes
+  roles:
+    - lsf-config
