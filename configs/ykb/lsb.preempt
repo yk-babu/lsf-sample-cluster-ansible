@@ -1,0 +1,10 @@
+# Preemption policy for ykb
+# Format: PREEMPTOR_QUEUE  TARGET_QUEUE   ACTION        PRIORITY
+
+# short queue preempts long (prefer suspend+requeue)
+short    long     SUSPEND_REQUEUE   100
+short    long     KILL_REQUEUE      50
+
+# admin queue can preempt anything immediately
+admin    long     KILL              200
+admin    short    KILL              200
