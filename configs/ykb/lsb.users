@@ -1,0 +1,16 @@
+Begin Users
+# Example users — update these with real usernames for fairshare
+USER   teamA_user1    SHARE=50
+USER   teamA_user2    SHARE=50
+USER   teamB_user1    SHARE=30
+USER   teamB_user2    SHARE=30
+USER   user_generic1  SHARE=10
+USER   user_generic2  SHARE=10
+End Users
+
+Begin Groups
+GROUP  teamA          SHARE=100
+GROUP  teamB          SHARE=60
+GROUP  research       SHARE=40
+GROUP  default        SHARE=20
+End Groups
