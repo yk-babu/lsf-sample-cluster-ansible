@@ -1,0 +1,25 @@
+- name: Ensure conf directory exists
+  file:
+    path: /prj/ykb/conf/ykb
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Copy static LSF configs to shared conf directory
+  copy:
+    src: ../../configs/ykb/
+    dest: /prj/ykb/conf/ykb/
+    owner: root
+    group: root
+    mode: '0644'
+    remote_src: no
+
+- name: Run badmin reconfig to pick up config changes
+  command: badmin reconfig
+  register: reconfig_out
+  ignore_errors: yes
+
+- name: Restart mbatchd if reconfig failed
+  command: badmin mbdrestart
+  when: reconfig_out is failed
