@@ -1,0 +1,29 @@
+Begin Queue
+QUEUE_NAME    = short
+PRIORITY      = 80
+RUN_WINDOW    = all
+DESCRIPTION   = "Short jobs - high priority, can preempt long"
+MAX_RUNTIME   = 1:00
+FAIRSHARE     = USER
+HOSTS         = slaves
+End Queue
+
+Begin Queue
+QUEUE_NAME    = long
+PRIORITY      = 40
+RUN_WINDOW    = all
+DESCRIPTION   = "Long jobs - lower priority, can be preempted"
+MAX_RUNTIME   = 168:00
+FAIRSHARE     = USER
+HOSTS         = slaves
+End Queue
+
+Begin Queue
+QUEUE_NAME    = admin
+PRIORITY      = 100
+RUN_WINDOW    = all
+DESCRIPTION   = "Admin jobs - highest priority for admins"
+MAX_RUNTIME   = 4:00
+FAIRSHARE     = USER
+HOSTS         = slaves
+End Queue
