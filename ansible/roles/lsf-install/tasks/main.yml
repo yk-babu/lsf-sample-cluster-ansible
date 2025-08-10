@@ -1,0 +1,28 @@
+- name: Ensure LSF_TOP exists
+  file:
+    path: /prj/ykb
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Copy installation config to host
+  copy:
+    src: ../../configs/ykb/install.config
+    dest: /tmp/install.config
+    owner: root
+    mode: '0644'
+
+- name: Copy server config to host
+  copy:
+    src: ../../configs/ykb/server.config
+    dest: /tmp/server.config
+    owner: root
+    mode: '0644'
+
+- name: Run LSF installer (idempotent guard)
+  command: /opt/lsf_installer/lsfinstall -f /tmp/install.config -s /tmp/server.config
+  args:
+    creates: /prj/ykb/conf/ykb/lsf.conf
+  register: install_result
+  ignore_errors: false
